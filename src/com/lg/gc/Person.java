@@ -5,8 +5,6 @@ package com.lg.gc;
  */
 public class Person {
 
-
-
     private String name;
     private Integer age;
 
