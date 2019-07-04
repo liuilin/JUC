@@ -18,5 +18,6 @@ public class List {
         System.out.println(Arrays.stream(new Integer[]{1, 2, 3}).collect(Collectors.toList()));
         System.out.println("test");
         System.out.println("hhh");
+        System.out.println("Gakki");
     }
 }
