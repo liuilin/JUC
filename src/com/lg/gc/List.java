@@ -17,5 +17,6 @@ public class List {
         //必须传一个对象，而非int数组（推荐java8的stream方式）
         System.out.println(Arrays.stream(new Integer[]{1, 2, 3}).collect(Collectors.toList()));
         System.out.println("hhh,submittttt");
+        System.out.println("test");
     }
 }
