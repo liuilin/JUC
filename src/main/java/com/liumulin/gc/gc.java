@@ -1,4 +1,4 @@
-package com.lg.gc;
+package com.liumulin.gc;
 
 import java.util.Random;
 

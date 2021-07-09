@@ -1,4 +1,4 @@
-package com.lg.gc;
+package com.liumulin.gc;
 
 /**
  * @author Mugen 2019/2/25
