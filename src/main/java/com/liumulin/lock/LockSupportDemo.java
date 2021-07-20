@@ -1,7 +1,8 @@
-package com.liumulin;
+package com.liumulin.lock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -15,6 +16,22 @@ public class LockSupportDemo {
     private static Condition condition = rLock.newCondition();
 
     public static void main(String[] args) {
+        Thread a = new Thread(() -> {
+            //暂停一会儿线程
+            try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+            System.out.println(Thread.currentThread().getName() + "---come in");
+            LockSupport.park();
+            System.out.println(Thread.currentThread().getName() + "---被唤醒");
+        }, "A");
+        a.start();
+
+        //暂停一会儿线程
+//        try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+        Thread b = new Thread(() -> {
+            LockSupport.unpark(a);
+            System.out.println(Thread.currentThread().getName() + "---被通知");
+        }, "B");
+        b.start();
     }
 
     private static void conditionAwaitSignal() {

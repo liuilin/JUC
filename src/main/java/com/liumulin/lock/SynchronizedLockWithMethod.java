@@ -1,5 +1,7 @@
 package com.liumulin.lock;
 
+import java.util.ArrayList;
+
 /**
  * 可重入锁:可重复可递归调用的锁，在外层使用锁之后，在内层仍然可以使用，并且不发生死锁，这样的锁就叫做可重入锁
  * <p>
